@@ -2,21 +2,19 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 class Gigasecond {
-  private LocalDate birthDate;
   private LocalDateTime birthDateTime;
+  private static final long ONE_GIGA_SECOND = 1_000_000_000L;
 
     Gigasecond(LocalDate birthDate) {
-      this.birthDate = birthDate;
-      this.birthDateTime = birthDate.atTime(0, 0, 0);
-
+      birthDateTime = birthDate.atTime(0, 0, 0);
     }
 
     Gigasecond(LocalDateTime birthDateTime) {
-
+      this.birthDateTime = birthDateTime;
     }
 
     LocalDateTime getDate() {
-      return LocalDateTime.of(2043, Month.JANUARY, 1, 1, 46, 40);
+      return birthDateTime.plusSeconds(ONE_GIGA_SECOND);
     }
 
 }
